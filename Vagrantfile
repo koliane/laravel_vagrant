@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     sudo apt install git -y
     ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
     git clone https://github.com/koliane/laravel_ansible.git /tmp/ansible
-    ansible-playbook /tmp/ansible/playbook.yaml
+    ansible-playbook /tmp/ansible/playbook.yaml --extra-vars "project_name=laravel_project db_name=laravel_db db_user_name=laravel db_user_password=12345678"
   SHELL
   
 end
